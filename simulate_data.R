@@ -93,55 +93,7 @@ simulate_data <- function(
   ID <- ID_vector
   Setting <- Setting_vector
   Measurement_nr <- Measurement_nr_vector
-  Index <- c(1:length(FEV1))
-  df <- tibble(Index, ID, Setting, Measurement_nr, Age, FEV1)
+  df <- tibble(ID, Setting, Measurement_nr, Age, FEV1)
   
   return (list(df = df, beta_home_true = beta, beta_hosp_true = beta_hosp, b_true = b))
 }
-
-
-# Variables.
-xmin <- 7
-xmax <- 8
-sigma_beta0 <- 1
-sigma_beta1 <- 1
-rho_home <- -0.5
-sigma_beta0_hosp <- 1
-sigma_beta1_hosp <- 1
-rho_hosp <- -0.5
-N <- 100
-m <- 8
-n_hosp <- 4
-varhomeb0 <- 1
-varhospb0 <- 1
-varhomeb1 <- 1
-varhospb1 <- 1
-cov_homeb0hospb0 <- 0.5
-cov_homeb0homeb1 <- -0.5
-cov_homeb0hospb1 <- -0.5
-cov_hospb0homeb1 <- -0.5
-cov_hospb0hospb1 <- -0.5
-cov_homeb1hospb1 <- 0.5
-
-data <- simulate_data(
-  xmin,
-  xmax,
-  sigma_beta0,
-  sigma_beta1,
-  rho_home,
-  sigma_beta0_hosp,
-  sigma_beta1_hosp,
-  rho_hosp,
-  N,
-  m,
-  n_hosp,
-  varhomeb0,
-  varhospb0, 
-  varhomeb1,
-  varhospb1,
-  cov_homeb0hospb0,
-  cov_homeb0homeb1,
-  cov_homeb0hospb1,
-  cov_hospb0homeb1,
-  cov_hospb0hospb1,
-  cov_homeb1hospb1)
