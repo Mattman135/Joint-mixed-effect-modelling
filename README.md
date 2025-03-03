@@ -1,3 +1,6 @@
 # Joint-mixed-effect-modelling
 
-Describe the files here
+## Files
+
+#### SIMULATE DATA
+It simulates data that is similar to real world CF (cystic fibrosis) data. There are 26 variables as input. See the comment in the file for default settings.
